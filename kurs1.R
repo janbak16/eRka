@@ -1,21 +1,21 @@
 # Import/eksport danych
 
 
-library(openxlsx)
-# tylko xlsx
-ludnosc <- read.xlsx("../resources/LUDN_2137_20160225144358.xlsx", sheet = 2)
-head(ludnosc)
-
-library(XML)
-library(RCurl)
-link <- "https://pl.wikipedia.org/wiki/Lista_mecz%C3%B3w_reprezentacji_Polski_w_pi%C5%
-82ce_no%C5%BCnej"
-xData <- getURL(link)
-tabele <- readHTMLTable(xData, stringsAsFactors = FALSE)
-length(tabele)
-
-statystyki <- tabele[[1]]
-head(statystyki)
+# library(openxlsx)
+# # tylko xlsx
+# ludnosc <- read.xlsx("../resources/LUDN_2137_20160225144358.xlsx", sheet = 2)
+# head(ludnosc)
+# 
+# library(XML)
+# library(RCurl)
+# link <- "https://pl.wikipedia.org/wiki/Lista_mecz%C3%B3w_reprezentacji_Polski_w_pi%C5%
+# 82ce_no%C5%BCnej"
+# xData <- getURL(link)
+# tabele <- readHTMLTable(xData, stringsAsFactors = FALSE)
+# length(tabele)
+# 
+# statystyki <- tabele[[1]]
+# head(statystyki)
 
 
 x <- rnorm(1000, 180, 5)
@@ -43,15 +43,15 @@ dplyr:::select(autaZWiekiem, Wiek.auta, Rok.produkcji)
 
 # Wybor obserwacji (w oparciu o warunki logiczne) - funkcja filter (pakiet dplyr)
 
-# Sortowanie obserwacji po jednej lub wiêkszej liczbie zmiennych Funkcj¹ arrange mozemy wykonaæ 
+# Sortowanie obserwacji po jednej lub wiÄ™kszej liczbie zmiennych FunkcjÄ… arrange mozemy wykonaÄ‡ 
 
 posortowanePorsche <- arrange(tylkoPorscheZDuzymSilnikiem, Cena.w.PLN)
 
-# Funkcja mutate() pozwala na stworzenie nowej zmiennej (jednej b¹dŸ wielu)
+# Funkcja mutate() pozwala na stworzenie nowej zmiennej (jednej bÄ…dÅº wielu)
 mutate()
 Grupowanie
 
-# Funkcja group_by pozwala na operacje na agregatach w grupach opisanych przez zmienn¹ jakoœciow¹.
+# Funkcja group_by pozwala na operacje na agregatach w grupach opisanych przez zmiennÄ… jakoÅ›ciowÄ….
 
 auta2012 %>%
   filter(Marka == "Volkswagen", Rok.produkcji == 2007) %>%
